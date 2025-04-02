@@ -23,7 +23,6 @@ export default function EducationSection() {
             <CardContent>
               <div className="flex justify-between items-center">
                 <span className="text-slate-600">2023 - 2025</span>
-                <span className="font-medium">GPA: 3.42</span>
               </div>
             </CardContent>
           </Card>
@@ -43,7 +42,6 @@ export default function EducationSection() {
             <CardContent>
               <div className="flex justify-between items-center">
                 <span className="text-slate-600">2018 - 2022</span>
-                <span className="font-medium">GPA: 3.2</span>
               </div>
             </CardContent>
           </Card>
