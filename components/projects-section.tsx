@@ -42,7 +42,7 @@ export default function ProjectsSection() {
         "Deployed on AWS with CI/CD pipeline for automated updates",
       ],
       technologies: ["Next.js", "TypeScript", "Tailwind CSS", "AWS"],
-      githubLink: "https://github.com/kamalm96/portfolio",
+      githubLink: "https://github.com/kamalm96/kamal-portfolio",
       showDemo: true,
     },
   ]
