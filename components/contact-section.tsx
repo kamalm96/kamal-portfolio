@@ -7,7 +7,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { MailIcon, PhoneIcon, MapPinIcon, CheckCircle, AlertCircle } from "lucide-react"
+import { MailIcon, MapPinIcon, CheckCircle, AlertCircle } from "lucide-react"
 import { sendEmail } from "@/lib/send-email"
 
 export default function ContactSection() {
@@ -86,18 +86,6 @@ export default function ContactSection() {
                   <h3 className="font-medium">Email</h3>
                   <a href="mailto:kamalbmansour@hotmail.com" className="text-blue-600 hover:underline">
                     kamalbmansour@hotmail.com
-                  </a>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-4">
-                <div className="bg-slate-100 p-3 rounded-full">
-                  <PhoneIcon className="h-6 w-6 text-blue-600" />
-                </div>
-                <div>
-                  <h3 className="font-medium">Phone</h3>
-                  <a href="tel:3134453817" className="text-blue-600 hover:underline">
-                    (313) 445-3817
                   </a>
                 </div>
               </div>
