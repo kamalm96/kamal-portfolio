@@ -1,54 +1,56 @@
-import { Button } from "@/components/ui/button"
-import { TypewriterEffect } from "@/components/ui/typewriter-effect"
-import Link from "next/link"
 import Image from "next/image"
+import Link from "next/link"
+import { ArrowUpRightIcon, MapPinIcon } from "lucide-react"
 
 export default function HeroSection() {
-  const words = [{ text: "Software" }, { text: "&" }, { text: "Machine" }, { text: "Learning" }, { text: "Engineer" }]
-
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      <div className="absolute inset-0">
-        <Image
-          src="/images/background.jpeg"
-          alt="Technology Background"
-          fill
-          priority
-          className="object-cover object-center"
-        />
-        <div className="absolute inset-0 bg-slate-900/50 backdrop-blur-[2px]"></div>
-      </div>
-
-      <div className="container mx-auto px-4 z-10 text-center text-white">
-        <div className="mb-8 inline-block rounded-full bg-slate-800/50 p-2 backdrop-blur-sm border-2 border-blue-500/30">
-          <Image src="/images/profile.png" alt="Kamal Mansour" width={180} height={180} className="rounded-full" />
+    <section className="mx-auto max-w-4xl px-6 pt-32 pb-20">
+      <div className="flex flex-col-reverse sm:flex-row items-start sm:items-center gap-10">
+        <div className="flex-1">
+          <p className="text-sm font-medium tracking-widest uppercase text-primary/70 mb-4">
+            Software Engineer — AI Systems &amp; Backend Infrastructure
+          </p>
+          <h1 className="font-serif text-5xl sm:text-6xl font-semibold text-primary leading-[1.05] mb-6">
+            Kamal Mansour
+          </h1>
+          <p className="text-lg text-muted-foreground leading-relaxed max-w-xl mb-8">
+            Four years building production AI systems and backend infrastructure at Ford Motor
+            Company. Sole owner of an escalation platform saving $6M+ annually. Led agentic AI
+            discovery with Google&apos;s Gemini Enterprise team. Strong in Go, Python, GCP, and
+            end-to-end system design.
+          </p>
+          <div className="flex flex-wrap items-center gap-4">
+            <Link
+              href="#contact"
+              className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-2.5 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
+            >
+              Get in touch
+            </Link>
+            <a
+              href="https://github.com/kamalm96"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:opacity-70 transition-opacity"
+            >
+              GitHub <ArrowUpRightIcon className="h-3.5 w-3.5" />
+            </a>
+            <span className="inline-flex items-center gap-1.5 text-sm text-muted-foreground">
+              <MapPinIcon className="h-3.5 w-3.5" /> Michigan, US
+            </span>
+          </div>
         </div>
 
-        <h1 className="text-5xl md:text-7xl font-bold mb-6 font-playfair tracking-tight">Kamal Mansour</h1>
-
-        <div className="min-h-[60px] mb-8">
-          <TypewriterEffect words={words} className="text-xl md:text-2xl justify-center" />
-        </div>
-
-        <p className="text-lg md:text-xl max-w-2xl mx-auto mb-10 text-slate-300">
-          Software Engineer at Ford Motor Company with expertise in Golang, React, and AI/ML. Building scalable
-          solutions and driving innovation.
-        </p>
-
-        <div className="flex flex-wrap justify-center gap-4">
-          <Link href="#contact">
-            <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
-              Contact Me
-            </Button>
-          </Link>
-          <Link href="#experience">
-            <Button size="lg" className="bg-slate-800/80 text-white border-blue-400 hover:bg-slate-700/90">
-              View Experience
-            </Button>
-          </Link>
+        <div className="shrink-0">
+          <Image
+            src="/images/profile.png"
+            alt="Kamal Mansour"
+            width={168}
+            height={168}
+            priority
+            className="rounded-2xl ring-1 ring-border object-cover"
+          />
         </div>
       </div>
     </section>
   )
 }
-

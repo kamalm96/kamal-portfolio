@@ -1,84 +1,63 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
+const roles = [
+  {
+    title: "Machine Learning Engineer, Agentic AI Team",
+    period: "Jun 2024 – Present",
+    bullets: [
+      "Led discovery on Ford's Application Agent in collaboration with Google's Gemini Enterprise team, evaluating Agent Engine capabilities for autonomous employee support workflows.",
+      "Deployed agents to Google Agent Engine via Apigee, using Google ADK with Cloud Datastores, tool abstractions, and multi-step reasoning to autonomously resolve internal support tickets.",
+      "Built a reusable, templatized CI/CD pipeline in GitHub Actions — single-file configuration that other teams adopt by referencing the shared repository.",
+      "Provisioned service accounts, coordinated VPC Service Controls exceptions with Ford's security team, and managed IAM permissions for secure GCP deployments.",
+      "Delivered technical findings and POC recommendations to stakeholders, collaborating directly with a Google engineer to define next steps.",
+    ],
+  },
+  {
+    title: "Escalation Engine — Sole Owner & Developer",
+    period: "2022 – Present",
+    bullets: [
+      "Production platform ingesting API data and triggering automated multi-level escalations across management hierarchies based on configurable patterns — originally anomaly detection, now supporting additional escalation types with other teams onboarding their own workflows.",
+      "Architected end-to-end in Go with Cloud SQL (Postgres), deployed via Terraform to GCP Cloud Run + Cloud Scheduler with fully automated CI/CD and comprehensive test coverage.",
+      "Drove anomaly resolution rates from ~15% to a sustained 98%, delivering over $6M/year in verified operational savings.",
+    ],
+  },
+  {
+    title: "Software Engineer — Backend Systems",
+    period: "Jun 2022 – Jun 2024",
+    bullets: [
+      "Built a GCP observability microservice using Cloud Asset Inventory to ingest organization-wide asset snapshots into BigQuery daily, enabling teams to link internal outages to upstream GCP disruptions.",
+      "Implemented caching strategies to eliminate redundant manager lookups, significantly reducing upstream API calls and improving throughput.",
+    ],
+  },
+]
 
 export default function ExperienceSection() {
   return (
-    <section id="experience" className="py-20 bg-slate-50">
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Professional Experience</h2>
+    <section id="experience" className="mx-auto max-w-4xl px-6 py-16 scroll-mt-14">
+      <p className="text-sm font-medium tracking-widest uppercase text-primary/70 mb-2">Experience</p>
+      <div className="flex flex-wrap items-baseline justify-between gap-2 mb-10">
+        <h2 className="font-serif text-3xl font-semibold text-primary">Ford Motor Company</h2>
+        <span className="text-sm text-muted-foreground">Jun 2022 – Present</span>
+      </div>
 
-        <div className="max-w-4xl mx-auto space-y-8">
-          <Card className="border-l-4 border-l-blue-600 shadow-lg hover:shadow-xl transition-shadow">
-            <CardHeader>
-              <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-2">
-                <div>
-                  <CardTitle className="text-xl md:text-2xl">Software Engineer</CardTitle>
-                  <CardDescription>Ford Motor Company</CardDescription>
-                </div>
-                <Badge className="w-fit bg-blue-600">Jan 2025 - Present</Badge>
-              </div>
-            </CardHeader>
-            <CardContent>
-              <ul className="list-disc pl-5 space-y-2">
-                <li>
-                  Led the design and development of a Golang-based backend system that monitored anomalous spending and
-                  escalated issues to team leads.
-                </li>
-                <li>Leveraged Redis Queues to efficiently track resolution and escalation processes.</li>
-                <li>Collaborated with cross-functional teams to create and implement necessary APIs.</li>
-                <li>Delivered an estimated annual savings of approximately $2 million for Ford.</li>
-                <li>Received recognition from upper management.</li>
+      <div className="space-y-12">
+        {roles.map((role) => (
+          <div key={role.title} className="sm:grid sm:grid-cols-[180px_1fr] sm:gap-8">
+            <div className="mb-3 sm:mb-0">
+              <span className="text-sm text-muted-foreground">{role.period}</span>
+            </div>
+            <div>
+              <h3 className="font-medium text-foreground mb-3">{role.title}</h3>
+              <ul className="space-y-2.5">
+                {role.bullets.map((bullet, i) => (
+                  <li key={i} className="text-[15px] leading-relaxed text-muted-foreground pl-4 relative">
+                    <span className="absolute left-0 top-[0.7em] h-1 w-1 rounded-full bg-primary/50" />
+                    {bullet}
+                  </li>
+                ))}
               </ul>
-            </CardContent>
-          </Card>
-
-          <Card className="border-l-4 border-l-blue-500 shadow-lg hover:shadow-xl transition-shadow">
-            <CardHeader>
-              <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-2">
-                <div>
-                  <CardTitle className="text-xl md:text-2xl">Junior Software Engineer</CardTitle>
-                  <CardDescription>Ford Motor Company</CardDescription>
-                </div>
-                <Badge className="w-fit bg-blue-500">Jan 2023 - Dec 2024</Badge>
-              </div>
-            </CardHeader>
-            <CardContent>
-              <ul className="list-disc pl-5 space-y-2">
-                <li>
-                  Led the development of a Solution Catalog, which centralized templates and enhanced onboarding
-                  efficiency by 40%.
-                </li>
-                <li>
-                  Engineered the automation of API publication to Apigee via Azure WIF, conserving 20% of developer
-                  time.
-                </li>
-              </ul>
-            </CardContent>
-          </Card>
-
-          <Card className="border-l-4 border-l-blue-400 shadow-lg hover:shadow-xl transition-shadow">
-            <CardHeader>
-              <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-2">
-                <div>
-                  <CardTitle className="text-xl md:text-2xl">Entry-Level Software Engineer</CardTitle>
-                  <CardDescription>Ford Motor Company</CardDescription>
-                </div>
-                <Badge className="w-fit bg-blue-400">Jun 2022 - Dec 2023</Badge>
-              </div>
-            </CardHeader>
-            <CardContent>
-              <ul className="list-disc pl-5 space-y-2">
-                <li>
-                  Developed and launched three scalable web applications using React, Java Spring Boot, and PostgreSQL,
-                  setting new benchmarks in production standards.
-                </li>
-                <li>Implemented CI/CD pipelines with Jenkins, cutting deployment times by 70%.</li>
-              </ul>
-            </CardContent>
-          </Card>
-        </div>
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   )
 }
-

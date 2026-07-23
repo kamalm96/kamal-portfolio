@@ -1,10 +1,9 @@
 import { type NextRequest, NextResponse } from "next/server"
 import { Resend } from "resend"
 
-const resend = new Resend(process.env.RESEND_API_KEY)
-
 export async function POST(request: NextRequest) {
   try {
+    const resend = new Resend(process.env.RESEND_API_KEY)
     const { name, email, message } = await request.json()
 
     if (!name || !email || !message) {
@@ -13,7 +12,7 @@ export async function POST(request: NextRequest) {
 
     const { data, error } = await resend.emails.send({
       from: "onboarding@resend.dev",
-      to: "kamal_mansour96@hotmail.com",
+      to: "kamalbmansour@hotmail.com",
       subject: `New message from ${name}`,
       text: `
         Name: ${name}

@@ -1,53 +1,37 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { GraduationCap } from "lucide-react"
+const education = [
+  {
+    degree: "M.S. in Artificial Intelligence / Machine Learning",
+    school: "University of Michigan",
+    period: "2023 – 2025",
+    detail: "GPA 3.5",
+  },
+  {
+    degree: "B.S. in Computer Science",
+    school: "Wayne State University",
+    period: "2018 – 2022",
+    detail: "GPA 3.5",
+  },
+]
 
 export default function EducationSection() {
   return (
-    <section id="education" className="py-20 bg-white">
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Education</h2>
+    <section id="education" className="mx-auto max-w-4xl px-6 py-16 scroll-mt-14">
+      <p className="text-sm font-medium tracking-widest uppercase text-primary/70 mb-2">Education</p>
+      <h2 className="font-serif text-3xl font-semibold text-primary mb-10">Degrees</h2>
 
-        <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
-          <Card className="shadow-lg hover:shadow-xl transition-shadow">
-            <CardHeader className="pb-2">
-              <div className="flex items-start gap-4">
-                <div className="bg-slate-100 p-3 rounded-full">
-                  <GraduationCap className="h-6 w-6 text-blue-600" />
-                </div>
-                <div>
-                  <CardTitle className="text-xl">Master's in AI/ML</CardTitle>
-                  <CardDescription>University of Michigan</CardDescription>
-                </div>
-              </div>
-            </CardHeader>
-            <CardContent>
-              <div className="flex justify-between items-center">
-                <span className="text-slate-600">2023 - 2025</span>
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card className="shadow-lg hover:shadow-xl transition-shadow">
-            <CardHeader className="pb-2">
-              <div className="flex items-start gap-4">
-                <div className="bg-slate-100 p-3 rounded-full">
-                  <GraduationCap className="h-6 w-6 text-blue-600" />
-                </div>
-                <div>
-                  <CardTitle className="text-xl">Computer Science</CardTitle>
-                  <CardDescription>Wayne State University</CardDescription>
-                </div>
-              </div>
-            </CardHeader>
-            <CardContent>
-              <div className="flex justify-between items-center">
-                <span className="text-slate-600">2018 - 2022</span>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
+      <div className="space-y-6">
+        {education.map((item) => (
+          <div key={item.degree} className="sm:grid sm:grid-cols-[180px_1fr] sm:gap-8">
+            <span className="text-sm text-muted-foreground block mb-1 sm:mb-0">{item.period}</span>
+            <div>
+              <h3 className="font-medium text-foreground">{item.degree}</h3>
+              <p className="text-[15px] text-muted-foreground">
+                {item.school} · {item.detail}
+              </p>
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   )
 }
-

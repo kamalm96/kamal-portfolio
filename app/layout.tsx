@@ -1,20 +1,18 @@
 import type React from "react"
 import "@/app/globals.css"
-import { ThemeProvider } from "@/components/theme-provider"
 import type { Metadata } from "next"
-import { Inter, Playfair_Display } from "next/font/google"
+import { Inter, Fraunces } from "next/font/google"
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
-const playfair = Playfair_Display({
+const fraunces = Fraunces({
   subsets: ["latin"],
-  variable: "--font-playfair",
+  variable: "--font-fraunces",
 })
 
 export const metadata: Metadata = {
-  title: "Kamal Mansour | Software Engineer",
+  title: "Kamal Mansour — Software Engineer",
   description:
-    "Professional portfolio of Kamal Mansour, Software Engineer at Ford Motor Company with expertise in Golang, React, and AI/ML.",
-    generator: 'v0.dev'
+    "Software engineer building production AI systems and backend infrastructure at Ford Motor Company. Go, Python, GCP, and end-to-end system design.",
 }
 
 export default function RootLayout({
@@ -23,19 +21,11 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en">
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
-      <body className={`${inter.variable} ${playfair.variable} font-sans`}>
-        <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
-          {children}
-        </ThemeProvider>
-      </body>
+      <body className={`${inter.variable} ${fraunces.variable} font-sans`}>{children}</body>
     </html>
   )
 }
-
-
-
-import './globals.css'

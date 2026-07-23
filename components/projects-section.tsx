@@ -1,131 +1,52 @@
-"use client"
+import { ArrowUpRightIcon } from "lucide-react"
 
-import { useState } from "react"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
-import { GithubIcon, ExternalLinkIcon } from "lucide-react"
-import { AnimatePresence, motion } from "framer-motion"
+const projects = [
+  {
+    title: "Banking App",
+    description:
+      "Backend for a banking system in Go with PostgreSQL — type-safe queries via SQLC, Go-Migrate migrations, robust transaction handling with deadlock mitigation, and clean architecture throughout.",
+    technologies: ["Golang", "PostgreSQL", "SQLC", "Go-Migrate"],
+    link: "https://github.com/kamalm96/go-transaction",
+  },
+  {
+    title: "Portfolio Website",
+    description:
+      "This site — a minimal, responsive portfolio built with Next.js and Tailwind CSS, deployed with an automated pipeline.",
+    technologies: ["Next.js", "TypeScript", "Tailwind CSS"],
+    link: "https://github.com/kamalm96/kamal-portfolio",
+  },
+]
 
 export default function ProjectsSection() {
-  const [showMessage, setShowMessage] = useState(false)
-
-  const handlePortfolioDemo = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" })
-    setShowMessage(true)
-
-    setTimeout(() => {
-      setShowMessage(false)
-    }, 3000)
-  }
-
-  const projects = [
-    {
-      title: "Banking App",
-      description: "A backend for a simple banking system using Golang with PostgreSQL",
-      details: [
-        "Utilized SQLC for type-safe query generation and performed database migrations using Go-Migrate",
-        "Implemented core functionalities such as transferring money between users with robust handling of database transactions",
-        "Mitigated deadlocks and wrote comprehensive tests",
-        "Followed clean architecture principles to ensure modular and maintainable code",
-      ],
-      technologies: ["Golang", "PostgreSQL", "SQLC", "Go-Migrate"],
-      githubLink: "https://github.com/kamalm96/go-transaction",
-      showDemo: false,
-    },
-    {
-      title: "Portfolio Website",
-      description: "A responsive, high-performance portfolio website using Next.js on AWS",
-      details: [
-        "Developed a modern, responsive portfolio website to showcase professional experience",
-        "Implemented SEO best practices and optimized performance",
-        "Deployed on AWS with CI/CD pipeline for automated updates",
-      ],
-      technologies: ["Next.js", "TypeScript", "Tailwind CSS", "AWS"],
-      githubLink: "https://github.com/kamalm96/kamal-portfolio",
-      showDemo: true,
-    },
-  ]
-
   return (
-    <section id="projects" className="py-20 bg-white relative">
-      <AnimatePresence>
-        {showMessage && (
-          <motion.div
-            initial={{ opacity: 0, y: -50 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -50 }}
-            transition={{
-              type: "spring",
-              stiffness: 500,
-              damping: 30,
-            }}
-            className="fixed top-24 left-1/2 transform -translate-x-1/2 z-50"
+    <section id="projects" className="mx-auto max-w-4xl px-6 py-16 scroll-mt-14">
+      <p className="text-sm font-medium tracking-widest uppercase text-primary/70 mb-2">Projects</p>
+      <h2 className="font-serif text-3xl font-semibold text-primary mb-10">Selected work</h2>
+
+      <div className="grid sm:grid-cols-2 gap-5">
+        {projects.map((project) => (
+          <a
+            key={project.title}
+            href={project.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group rounded-xl border border-border bg-card p-6 hover:border-primary/40 hover:shadow-sm transition-all"
           >
-            <div className="bg-blue-600 text-white px-6 py-3 rounded-lg shadow-lg flex items-center">
-              <motion.div
-                initial={{ scale: 0.8 }}
-                animate={{ scale: [1, 1.2, 1] }}
-                transition={{
-                  duration: 0.5,
-                  repeat: 2,
-                  repeatType: "reverse",
-                }}
-                className="text-xl font-medium"
-              >
-                You're already here! 😊
-              </motion.div>
+            <div className="flex items-start justify-between gap-3 mb-3">
+              <h3 className="font-medium text-foreground">{project.title}</h3>
+              <ArrowUpRightIcon className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors shrink-0 mt-1" />
             </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Projects</h2>
-
-        <div className="max-w-4xl mx-auto space-y-8">
-          {projects.map((project, index) => (
-            <Card key={index} className="shadow-lg hover:shadow-xl transition-shadow">
-              <CardHeader>
-                <CardTitle className="text-xl md:text-2xl">{project.title}</CardTitle>
-                <CardDescription>{project.description}</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <ul className="list-disc pl-5 space-y-2 mb-4">
-                  {project.details.map((detail, i) => (
-                    <li key={i}>{detail}</li>
-                  ))}
-                </ul>
-                <div className="flex flex-wrap gap-2 mt-4">
-                  {project.technologies.map((tech) => (
-                    <Badge key={tech} variant="outline">
-                      {tech}
-                    </Badge>
-                  ))}
-                </div>
-              </CardContent>
-              <CardFooter className="flex gap-4">
-                <Button
-                  variant="outline"
-                  size="sm"
-                  className="gap-2"
-                  onClick={() => window.open(project.githubLink, "_blank")}
-                >
-                  <GithubIcon className="h-4 w-4" />
-                  GitHub
-                </Button>
-                {project.showDemo && (
-                  <Button variant="outline" size="sm" className="gap-2" onClick={handlePortfolioDemo}>
-                    <ExternalLinkIcon className="h-4 w-4" />
-                    Live Demo
-                  </Button>
-                )}
-              </CardFooter>
-            </Card>
-          ))}
-        </div>
+            <p className="text-[15px] leading-relaxed text-muted-foreground mb-5">{project.description}</p>
+            <div className="flex flex-wrap gap-2">
+              {project.technologies.map((tech) => (
+                <span key={tech} className="text-xs text-primary/80 bg-secondary rounded-full px-2.5 py-1">
+                  {tech}
+                </span>
+              ))}
+            </div>
+          </a>
+        ))}
       </div>
     </section>
   )
 }
-
