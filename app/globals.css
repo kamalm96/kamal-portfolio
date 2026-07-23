@@ -4,26 +4,26 @@
 
 @layer base {
   :root {
-    /* Phthalo green palette */
-    --background: 80 20% 98%;
-    --foreground: 152 30% 10%;
-    --card: 0 0% 100%;
-    --card-foreground: 152 30% 10%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 152 30% 10%;
-    --primary: 151 49% 14%; /* phthalo green #123524 */
-    --primary-foreground: 80 20% 98%;
-    --secondary: 150 20% 94%;
-    --secondary-foreground: 151 49% 14%;
-    --muted: 150 15% 94%;
-    --muted-foreground: 152 12% 40%;
-    --accent: 150 20% 92%;
-    --accent-foreground: 151 49% 14%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 150 14% 88%;
-    --input: 150 14% 85%;
-    --ring: 151 49% 24%;
+    /* Dark phthalo green palette */
+    --background: 162 28% 5%;
+    --foreground: 150 18% 90%;
+    --card: 160 24% 8%;
+    --card-foreground: 150 18% 90%;
+    --popover: 160 24% 8%;
+    --popover-foreground: 150 18% 90%;
+    --primary: 158 60% 52%; /* luminous phthalo accent */
+    --primary-foreground: 162 28% 6%;
+    --secondary: 158 22% 12%;
+    --secondary-foreground: 158 50% 70%;
+    --muted: 158 16% 11%;
+    --muted-foreground: 150 10% 62%;
+    --accent: 158 22% 13%;
+    --accent-foreground: 158 50% 70%;
+    --destructive: 0 70% 45%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 158 16% 15%;
+    --input: 158 16% 18%;
+    --ring: 158 60% 42%;
     --radius: 0.5rem;
   }
 }
@@ -31,6 +31,9 @@
 @layer base {
   * {
     @apply border-border;
+  }
+  html {
+    color-scheme: dark;
   }
   body {
     @apply bg-background text-foreground font-sans antialiased;
@@ -43,5 +46,5 @@ html {
 }
 
 ::selection {
-  background: hsl(151 49% 14% / 0.15);
+  background: hsl(158 60% 52% / 0.28);
 }

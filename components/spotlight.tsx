@@ -15,7 +15,7 @@ export default function Spotlight() {
     <div
       className="pointer-events-none fixed inset-0 z-0 hidden lg:block transition-opacity"
       style={{
-        background: `radial-gradient(560px at ${pos.x}px ${pos.y}px, hsl(151 49% 14% / 0.055), transparent 80%)`,
+        background: `radial-gradient(560px at ${pos.x}px ${pos.y}px, hsl(158 60% 52% / 0.05), transparent 80%)`,
       }}
       aria-hidden="true"
     />

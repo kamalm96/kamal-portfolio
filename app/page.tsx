@@ -54,14 +54,16 @@ export default function Home() {
         {/* ——— left / header ——— */}
         <header className="pt-16 pb-10 lg:sticky lg:top-0 lg:flex lg:h-screen lg:flex-col lg:py-24">
           <div>
-            <Image
-              src="/images/profile.png"
-              alt="Kamal Mansour"
-              width={88}
-              height={88}
-              priority
-              className="rounded-2xl ring-1 ring-border object-cover mb-6"
-            />
+            <div className="mb-6 inline-block rounded-full bg-gradient-to-br from-primary/70 via-primary/25 to-transparent p-[3px] shadow-[0_0_44px_hsl(158_60%_52%/0.22)]">
+              <Image
+                src="/images/profile.png"
+                alt="Kamal Mansour"
+                width={96}
+                height={96}
+                priority
+                className="rounded-full object-cover ring-1 ring-background"
+              />
+            </div>
             <h1 className="font-serif text-4xl sm:text-5xl font-semibold text-primary tracking-tight">
               Kamal Mansour
             </h1>
