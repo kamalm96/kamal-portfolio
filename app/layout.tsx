@@ -2,6 +2,7 @@ import type React from "react"
 import "@/app/globals.css"
 import type { Metadata } from "next"
 import { Inter, Fraunces } from "next/font/google"
+import { Analytics } from "@vercel/analytics/next"
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
 const fraunces = Fraunces({
@@ -22,7 +23,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${fraunces.variable} font-sans`}>{children}</body>
+      <body className={`${inter.variable} ${fraunces.variable} font-sans`}>
+        {children}
+        <Analytics />
+      </body>
     </html>
   )
 }
