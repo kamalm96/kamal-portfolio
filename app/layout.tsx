@@ -10,9 +10,9 @@ const fraunces = Fraunces({
 })
 
 export const metadata: Metadata = {
-  title: "Kamal Mansour — Software Engineer",
+  title: "Kamal Mansour — Senior Systems Engineer",
   description:
-    "Software engineer building production AI systems and backend infrastructure at Ford Motor Company. Go, Python, GCP, and end-to-end system design.",
+    "Senior Systems Engineer at General Motors. Internal AI tooling with Glean AI and Google Cloud Gemini Enterprise. Go, Python, GCP.",
 }
 
 export default function RootLayout({
