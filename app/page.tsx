@@ -2,6 +2,7 @@ import Image from "next/image"
 import { ArrowUpRightIcon, GithubIcon, MailIcon, PhoneIcon } from "lucide-react"
 import Spotlight from "@/components/spotlight"
 import SideNav from "@/components/side-nav"
+import AppLinks from "@/components/app-links"
 
 const experience = [
   {
@@ -150,36 +151,38 @@ export default function Home() {
             </h2>
             <ol className="space-y-2">
               {projects.map((project) => (
-                <li key={project.title}>
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group grid sm:grid-cols-[110px_1fr] gap-2 sm:gap-6 rounded-xl p-4 -mx-4 transition-colors hover:bg-primary/[0.045]"
-                  >
-                    <span className="text-xs font-medium uppercase tracking-wide text-muted-foreground pt-1">
-                      Side project
-                    </span>
-                    <div>
-                      <h3 className="font-medium text-foreground inline-flex items-center gap-1.5">
-                        {project.title}
-                        <ArrowUpRightIcon className="h-4 w-4 text-muted-foreground transition-all group-hover:text-primary group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-                      </h3>
-                      <p className="mt-2 text-[15px] leading-relaxed text-muted-foreground">
-                        {project.description}
-                      </p>
-                      <div className="mt-3 flex flex-wrap gap-2">
-                        {project.tags.map((tag) => (
-                          <span
-                            key={tag}
-                            className="rounded-full bg-secondary px-3 py-1 text-xs font-medium text-primary"
-                          >
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
+                <li
+                  key={project.title}
+                  className="group grid sm:grid-cols-[110px_1fr] gap-2 sm:gap-6 rounded-xl p-4 -mx-4 transition-colors hover:bg-primary/[0.045]"
+                >
+                  <span className="text-xs font-medium uppercase tracking-wide text-muted-foreground pt-1">
+                    Side project
+                  </span>
+                  <div>
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-medium text-foreground inline-flex items-center gap-1.5 hover:text-primary transition-colors"
+                    >
+                      {project.title}
+                      <ArrowUpRightIcon className="h-4 w-4 text-muted-foreground transition-all group-hover:text-primary group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                    </a>
+                    <p className="mt-2 text-[15px] leading-relaxed text-muted-foreground">
+                      {project.description}
+                    </p>
+                    <div className="mt-3 flex flex-wrap gap-2">
+                      {project.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="rounded-full bg-secondary px-3 py-1 text-xs font-medium text-primary"
+                        >
+                          {tag}
+                        </span>
+                      ))}
                     </div>
-                  </a>
+                    <AppLinks />
+                  </div>
                 </li>
               ))}
             </ol>
