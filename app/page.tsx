@@ -10,15 +10,15 @@ const experience = [
     title: "Senior Systems Engineer",
     company: "General Motors",
     description:
-      "Building internal tooling on Glean AI and leading GM's migration from legacy vendor infrastructure to Google Cloud Gemini Enterprise.",
-    tags: ["Glean AI", "Gemini Enterprise", "GCP"],
+      "Building internal AI tooling and leading a migration from legacy vendor infrastructure to a modern enterprise AI platform on GCP.",
+    tags: ["Glean AI", "Enterprise AI", "GCP"],
   },
   {
     period: "2022 — 2026",
     title: "Software Engineer",
     company: "Ford Motor Company",
     description:
-      "Shipped agentic AI on Google Agent Engine alongside Google's Gemini Enterprise team. Sole owner of the Escalation Engine — a Go platform on GCP that raised anomaly resolution from ~15% to a sustained 98%, saving $6M+ a year.",
+      "Shipped agentic AI systems on GCP in collaboration with Google. Sole owner of the Escalation Engine — a Go platform that raised anomaly resolution from ~15% to a sustained 98%, saving $6M+ a year.",
     tags: ["Go", "Python", "Terraform", "AI Agents"],
   },
 ]
@@ -73,7 +73,7 @@ export default function Home() {
             </p>
             <p className="mt-4 max-w-sm text-[15px] leading-relaxed text-muted-foreground">
               I build internal AI tooling and the cloud infrastructure behind it — currently
-              leading GM&apos;s move to Google Cloud Gemini Enterprise.
+              leading enterprise AI platform work at GM.
             </p>
             <SideNav />
           </div>

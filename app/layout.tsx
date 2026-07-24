@@ -13,7 +13,7 @@ const fraunces = Fraunces({
 export const metadata: Metadata = {
   title: "Kamal Mansour — Senior Systems Engineer",
   description:
-    "Senior Systems Engineer at General Motors. Internal AI tooling with Glean AI and Google Cloud Gemini Enterprise. Go, Python, GCP.",
+    "Senior Systems Engineer at General Motors. Internal AI tooling and enterprise AI platform work on GCP. Go, Python, cloud infrastructure.",
 }
 
 export default function RootLayout({
