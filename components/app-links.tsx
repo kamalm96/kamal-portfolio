@@ -6,7 +6,8 @@ import { ArrowUpRightIcon } from "lucide-react"
 // Fill these in when the store links are live; empty links are hidden
 // and the smart button falls back to GitHub.
 const IOS_URL = "https://testflight.apple.com/join/ddxEvnVk"
-const ANDROID_URL = "" // needs a public EAS internal-distribution link or APK artifact URL
+const ANDROID_URL =
+  "https://expo.dev/accounts/kman996/projects/roomie/builds/84609a31-07c2-4046-8350-b7f5893e72f8"
 const GITHUB_URL = "https://github.com/kamalm96/roomie"
 
 type Platform = "ios" | "android" | "other"
