@@ -18,7 +18,7 @@ const experience = [
     title: "Software Engineer",
     company: "Ford Motor Company",
     description:
-      "Shipped agentic AI systems on GCP in collaboration with Google. Sole owner of the Escalation Engine — a Go platform that raised anomaly resolution from ~15% to a sustained 98%, saving $6M+ a year.",
+      "Built and shipped agentic AI systems on GCP. Sole owner of the Escalation Engine — a Go platform that raised anomaly resolution from ~15% to a sustained 98%, saving $6M+ a year.",
     tags: ["Go", "Python", "Terraform", "AI Agents"],
   },
 ]
