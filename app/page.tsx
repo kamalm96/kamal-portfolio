@@ -6,7 +6,7 @@ import AppLinks from "@/components/app-links"
 
 const experience = [
   {
-    period: "2026 — Now",
+    period: "2026 - Now",
     title: "Senior Systems Engineer",
     company: "General Motors",
     description:
@@ -14,11 +14,11 @@ const experience = [
     tags: ["Glean AI", "Enterprise AI", "Google Cloud"],
   },
   {
-    period: "2022 — 2026",
+    period: "2022 - 2026",
     title: "Software Engineer",
     company: "Ford Motor Company",
     description:
-      "Shipped agentic AI systems on Google Cloud in collaboration with Google. Sole owner of the Escalation Engine — a Go platform that raised anomaly resolution from ~15% to a sustained 98%, saving $6M+ a year.",
+      "Shipped agentic AI systems on Google Cloud in collaboration with Google. Sole owner of the Escalation Engine, a Go platform that raised anomaly resolution from ~15% to a sustained 98%, saving $6M+ a year.",
     tags: ["Go", "Python", "Terraform", "AI Agents"],
   },
 ]
@@ -28,19 +28,19 @@ const projects = [
     title: "Roomie",
     link: "https://github.com/kamalm96/roomie",
     description:
-      "A cross-platform roommate and housing app — listings, realtime chat, and location-based search. Built with React Native (Expo) and Supabase.",
+      "A cross-platform roommate and housing app with listings, realtime chat, and location-based search. Built with React Native (Expo) and Supabase.",
     tags: ["React Native", "Expo", "Supabase", "TypeScript"],
   },
 ]
 
 const education = [
   {
-    period: "2023 — 2025",
+    period: "2023 - 2025",
     degree: "M.S. Artificial Intelligence / Machine Learning",
     school: "University of Michigan",
   },
   {
-    period: "2018 — 2022",
+    period: "2018 - 2022",
     degree: "B.S. Computer Science",
     school: "Wayne State University",
   },
@@ -72,7 +72,7 @@ export default function Home() {
               Senior Systems Engineer · General Motors
             </p>
             <p className="mt-4 max-w-sm text-[15px] leading-relaxed text-muted-foreground">
-              I build internal AI tooling and the cloud infrastructure behind it — currently
+              I build internal AI tooling and the cloud infrastructure behind it. Currently
               leading enterprise AI platform work at GM.
             </p>
             <SideNav />
@@ -212,7 +212,7 @@ export default function Home() {
 
           <footer className="pt-4">
             <p className="text-sm text-muted-foreground">
-              © {new Date().getFullYear()} Kamal Mansour · Built with Next.js &amp; Tailwind
+              {`© ${new Date().getFullYear()} Kamal Mansour · Built by himself`}
             </p>
           </footer>
         </main>

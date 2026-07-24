@@ -11,7 +11,7 @@ const fraunces = Fraunces({
 })
 
 export const metadata: Metadata = {
-  title: "Kamal Mansour — Senior Systems Engineer",
+  title: "Kamal Mansour | Senior Systems Engineer",
   description:
     "Senior Systems Engineer at General Motors. Internal AI tooling and enterprise AI platform work on Google Cloud. Go, Python, cloud infrastructure.",
 }
